@@ -212,7 +212,7 @@ class WxgamePlatform {
 
     openDataContext = new WxgameOpenDataContext();
 }
-
+wx.showShareMenu();
 class WxgameOpenDataContext {
 
     createDisplayObject(type,width,height){

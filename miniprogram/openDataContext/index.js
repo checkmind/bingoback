@@ -78,9 +78,10 @@ let totalGroup = []
               console.log(score1, score2)
               return   score2 - score1
             })
-            totalGroup = totalGroup.map((val)=>{
+            totalGroup = totalGroup.map((val, num)=>{
               console.log(val)
               val.scroes = `第${val.scroes}宇宙`
+              val.key = num+1
               return val
             })
             console.log(totalGroup)
@@ -125,7 +126,7 @@ function saveFriendData() {
  */
 function init() {
   //排行榜绘制数据初始化
-  RankWidth = stageWidth * 4 / 4;
+  RankWidth = stageWidth * 4 / 4.5;
   RankHeight = stageHeight * 4 / 5;
   barWidth = RankWidth;
   barHeight = RankWidth / perPageMaxNum - 10;
