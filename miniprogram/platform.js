@@ -26,7 +26,7 @@ class WxgamePlatform {
         let music =  wx.createInnerAudioContext()
         music.src = 'http://cangnanshi.com/bingo/music.mp3'
         music.loop = true
-        //music.play();
+        music.play();
     }
     playClearMusic() {
         let music =  wx.createInnerAudioContext()
@@ -36,6 +36,16 @@ class WxgamePlatform {
     playButtonMusic() {
         let music =  wx.createInnerAudioContext()
         music.src = 'http://cangnanshi.com/bingo/button.mp3'
+        music.play();
+    }
+    playPassMusic() {
+        let music =  wx.createInnerAudioContext()
+        music.src = 'http://cangnanshi.com/bingo/pass.mp3'
+        music.play();
+    }
+    playShootMusic() {
+        let music =  wx.createInnerAudioContext()
+        music.src = 'http://cangnanshi.com/bingo/board.mp3'
         music.play();
     }
     saveData(data) {
@@ -197,7 +207,7 @@ class WxgamePlatform {
     }
     shareAppMessage() {
         wx.shareAppMessage({
-            title: "大夏天的，来消除几颗星球吧",
+            title: "委任于你拯救宇宙之重任",
             imageUrl: 'https://cangnanshi.com/bingo/title.png',
             query: '',
             success() {
@@ -213,6 +223,13 @@ class WxgamePlatform {
     openDataContext = new WxgameOpenDataContext();
 }
 wx.showShareMenu();
+wx.onShow(function() {
+
+    let music =  wx.createInnerAudioContext()
+    music.src = 'http://cangnanshi.com/bingo/music.mp3'
+    music.loop = true
+    music.play();
+})
 class WxgameOpenDataContext {
 
     createDisplayObject(type,width,height){
